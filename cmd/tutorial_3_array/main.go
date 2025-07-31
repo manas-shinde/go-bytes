@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	// array()
+	// arrays()
 	slices()
 }
 
@@ -52,10 +54,24 @@ func slices() {
 
 	//creating a slice using make
 	a := make([]int, 5, 10)
-	fmt.Printf("%s len=%d cap=%d %v\n",
-		"a", len(a), cap(a), a)
+	fmt.Printf("%s len=%d cap=%d %v\n", "a", len(a), cap(a), a)
 
 	b := a[0:2]
-	fmt.Printf("%s len=%d cap=%d %v\n",
-		"b", len(b), cap(b), b)
+	fmt.Printf("%s len=%d cap=%d %v\n", "b", len(b), cap(b), b)
+
+	//append the data into the slice
+	b = append(b, 3, 4, 5)
+	fmt.Printf("%s len=%d cap=%d %v\n", "b", len(b), cap(b), b)
+
+}
+
+func range_in_go(s []uint8) {
+	/*
+		The range keyword in Go is used to iterate over elements in various data structures like arrays, slices, maps, and strings.
+		It provides a convenient way to access both the index and value of each element.
+	*/
+	for i, v := range s {
+		fmt.Printf("Index: %d, Value: %d\n", i, v)
+	}
+
 }
